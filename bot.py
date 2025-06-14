@@ -2,18 +2,6 @@ import os, sys, glob, pytz, asyncio, logging, importlib
 from pathlib import Path
 from pyrogram import idle
 
-#Dont Remove My Credit @AV_BOTz_UPDATE 
-#This Repo Is By @BOT_OWNER26 
-# For Any Kind Of Error Ask Us In Support Group @AV_SUPPORT_GROUP
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-logging.getLogger("aiohttp").setLevel(logging.ERROR)
-logging.getLogger("pyrogram").setLevel(logging.ERROR)
-logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
- 
 from info import *
 from typing import Union, Optional, AsyncGenerator
 from Script import script 
@@ -24,14 +12,17 @@ from web.server import Webavbot
 from utils import temp, ping_server
 from web.server.clients import initialize_clients
 
-#Dont Remove My Credit @AV_BOTz_UPDATE 
-#This Repo Is By @BOT_OWNER26 
-# For Any Kind Of Error Ask Us In Support Group @AV_SUPPORT_GROUP
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logging.getLogger("aiohttp").setLevel(logging.ERROR)
+logging.getLogger("pyrogram").setLevel(logging.ERROR)
+logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
 Webavbot.start()
-loop = asyncio.get_event_loop()
 
 async def start():
     print('\n')
@@ -50,10 +41,6 @@ async def start():
             sys.modules["plugins." + plugin_name] = load
             print("Imported => " + plugin_name)
 
-#Dont Remove My Credit @AV_BOTz_UPDATE 
-#This Repo Is By @BOT_OWNER26 
-# For Any Kind Of Error Ask Us In Support Group @AV_SUPPORT_GROUP
-    
     if ON_HEROKU:
         asyncio.create_task(ping_server())
     me = await Webavbot.get_me()
@@ -73,13 +60,8 @@ async def start():
     await web.TCPSite(app, bind_address, PORT).start()
     await idle()
 
-#Dont Remove My Credit @AV_BOTz_UPDATE 
-#This Repo Is By @BOT_OWNER26 
-# For Any Kind Of Error Ask Us In Support Group @AV_SUPPORT_GROUP
-
 if __name__ == '__main__':
     try:
-        loop.run_until_complete(start())
+        asyncio.run(start())  # << Fix applied here
     except KeyboardInterrupt:
         logging.info('----------------------- Service Stopped -----------------------')
-
