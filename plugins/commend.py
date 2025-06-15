@@ -24,8 +24,8 @@ async def start(client, message):
             return
     if len(message.command) != 2 or (len(message.command) == 2 and message.command[1] == "start"):
         buttons = [[
-            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
-	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
+            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=f"https://t.me/YandereMommyDLGen_bot"),
+	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=f"https://t.me/YandereMommyDLGen_bot")
         ],[
             InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
             InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
