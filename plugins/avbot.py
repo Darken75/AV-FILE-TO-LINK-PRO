@@ -49,20 +49,9 @@ async def is_user_joined(bot, message: Message):
                 photo=AUTH_PICS,
                 caption=script.AUTH_TXT.format(message.from_user.mention),
                 parse_mode=ParseMode.HTML,
-                reply_markup=InlineKeyboardMarkup(
-                [[
-                    InlineKeyboardButton("❆ Jᴏɪɴ Oᴜʀ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link)
-                ]]
-                )
-            )
         else:
             ver = await message.reply_text(
                 text=script.AUTH_TXT.format(message.from_user.mention),
-                reply_markup=InlineKeyboardMarkup(
-                    [[
-                        InlineKeyboardButton("❆ Jᴏɪɴ Oᴜʀ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link)
-                    ]]
-                ),
                 parse_mode=ParseMode.HTML
             )
         await asyncio.sleep(30)
