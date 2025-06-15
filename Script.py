@@ -82,7 +82,7 @@ Nᴀᴍᴇ - {}"""
 #This Repo Is By @BOT_OWNER26 
 # For Any Kind Of Error Ask Us In Support Group @AV_SUPPORT_GROUP
     
-    AUTH_TXT = """<b>Mama no {}!\n\nOh, my darling, upload your file and let Mommy turn it into a link just for you~ 😘💋 </b>"""
+    AUTH_TXT = """<b>Mama no {}!\n\nUpload your files here and let Mommy turn them into a link just for you~ 😘💋 </b>"""
     
     CAPTION_TXT = """
 <i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>
