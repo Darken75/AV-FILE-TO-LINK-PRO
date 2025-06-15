@@ -49,6 +49,7 @@ async def is_user_joined(bot, message: Message):
                 photo=AUTH_PICS,
                 caption=script.AUTH_TXT.format(message.from_user.mention),
                 parse_mode=ParseMode.HTML,
+            )
         else:
             ver = await message.reply_text(
                 text=script.AUTH_TXT.format(message.from_user.mention),
@@ -100,4 +101,3 @@ async def get_shortlink(link):
     shortzy = Shortzy(api_key=SHORTLINK_API, base_site=SHORTLINK_URL)
     link = await shortzy.convert(link)
     return link
-    
